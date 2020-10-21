@@ -20,15 +20,25 @@ export default function App() {
   }, []);
 
   /* console.log(photos); */
+  // define function to get photoinput data
+  function getPicture(e) {
+    // let imageInput = document.getElementById("imageInput");
+    // console.log(imageInput.value);
+    // let image = fetch(imageInput.value)
+    //       .then((res) => {
+    //         console.log(res);
+    //       })
+    e.persist();
+    e.preventDefault();
+    console.log(e.target.files);
+    //console.log(React.createRef().current.files[0]);
+    e.preventDefault();
+  }
 
   return (
     <>
-      <div className="app">
-        <h1>Hello World!</h1>
-      </div>
-      <Navbar />
+      <Navbar setView={setView} currentView={currentView} />
       {currentView === "AllPhotos" ? <AllPhotos /> : <SinglePhoto />}
-      {/* {currentView !== "AllPhotos" && <SinglePhoto/>} */}
     </>
   );
 }
