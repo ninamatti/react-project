@@ -65,7 +65,8 @@ export default function App() {
         setFileState={setFileState}
         getPicture={getPicture}
       />
-      {currentView === "AllPhotos" ? <AllPhotos /> : <SinglePhoto />}
+      {/* {currentView === "AllPhotos" ? <AllPhotos photos={photos}/> : <SinglePhoto />} */}
+      <AllPhotos photos={photos} />
     </>
   );
 }

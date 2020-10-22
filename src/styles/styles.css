@@ -18,3 +18,8 @@ body {
 .single-photo {
   width: 100%;
 }
+
+.allImage {
+  height: auto;
+  width: 20%;
+}
