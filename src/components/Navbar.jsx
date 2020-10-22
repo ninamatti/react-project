@@ -4,7 +4,15 @@ import _ from "lodash";
 import Upload from "./Upload.jsx";
 import { saveObject } from "../utils/index.js";
 
-export default function Navbar({ setView, currentView }) {
+export default function Navbar({
+  setView,
+  currentView,
+  photos,
+  setPhotoArray,
+  fileLoaded,
+  setFileState,
+  getPicture
+}) {
   useEffect(() => {}, []);
 
   return (
@@ -24,6 +32,11 @@ export default function Navbar({ setView, currentView }) {
         callback={file => {
           saveObject(file);
         }}
+        photos={photos}
+        setPhotoArray={setPhotoArray}
+        fileLoaded={fileLoaded}
+        setFileState={setFileState}
+        getPicture={getPicture}
       />
     </>
   );

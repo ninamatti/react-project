@@ -1,9 +1,15 @@
 import React, { useEffect } from "react";
 import _ from "lodash";
 import "../styles/upload.css";
-import { saveObject } from "../utils";
+import { saveObject, listObjects } from "../utils";
 
-export default function Upload() {
+export default function Upload({
+  photos,
+  setPhotoArray,
+  fileLoaded,
+  setFileState,
+  getPicture
+}) {
   const inputRef = React.useRef(null);
 
   return (
@@ -19,10 +25,11 @@ export default function Upload() {
           type="submit"
           onClick={async e => {
             e.preventDefault();
-            console.log(inputRef.current.files[0]);
-            console.log(inputRef.current.files);
-            saveObject(inputRef.current.files[0]);
-            //console.log(newPhoto);
+            getPicture(inputRef.current.files[0]);
+
+            //let testSave = await saveObject(inputRef.current.files[0]);
+            //setFileState(true);
+            //
           }}
         >
           Upload Imageeeee
