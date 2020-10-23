@@ -15,18 +15,29 @@ export default function AllPhotos({ photos }) {
   // }, [photos]);
 
   const [url, setUrl] = useState("");
+  const [urlCollection, setCollection] = useState([""]);
+  const [pictureBody, setPictureBody] = useState("");
 
   useEffect(() => {
-    console.log("Photos were updated in ALLPhotos: ", photos);
-    setUrl("data:image/png;base64," + photos[0]);
-    console.log(typeof url);
+    let urls = [];
+    for (let i = 0; i < 10; i++) {
+      urls.push("data:image/png;base64," + photos[i]);
+    }
+    setCollection(urls);
   }, [photos]);
 
+  useEffect(() => {
+    let imgs = [];
+    for (let i = 0; i < 10; i++) {
+      imgs.push(<img className="image" src={urlCollection[i]} />);
+    }
+    setPictureBody(imgs);
+  }, [urlCollection]);
   return (
     <>
-      <div className="photoBody">
-        <img className="allImage" src={url} />
-      </div>
+      <div id="photoBody">{pictureBody}</div>
     </>
   );
 }
+
+//src={url}
