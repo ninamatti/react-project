@@ -1,11 +1,21 @@
 .navbar {
   padding: 2rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   background-color: #1c7e88;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .navbar-header {
   cursor: pointer;
   margin-right: auto;
+}
+
+h1 {
+  text-align: left;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+#allPhotoButton {
 }

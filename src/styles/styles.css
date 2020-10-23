@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  background-color: burlywood;
 }
 
 .navText {
@@ -20,11 +21,13 @@ body {
 }
 
 .image {
+  vertical-align: middle;
   height: auto;
   width: 100%;
 }
 
 .single {
+  margin-top: 10px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -33,18 +36,16 @@ body {
 }
 
 .imageWrap {
-  justify-content: flex-start;
-  /* display: flex;
-  align-items: center; */
-  background-color: blue;
+  display: inline-block;
   margin: 5px;
-  width: 200px;
-  height: 350px;
+  width: 150px;
+  height: 200px;
+  line-height: 200px;
+  border: 3px solid rgb(70, 69, 69);
+  background-color: #555;
 }
 
-.photoBody {
-  display: flex;
-  /* align-items: stretch; */
-  /* flex-flow: row wrap;
-  justify-content: flex-start; */
+#photoBody {
+  padding: 10px;
+  border-radius: 5px;
 }

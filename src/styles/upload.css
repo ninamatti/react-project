@@ -3,10 +3,40 @@
 }
 
 input {
-  /*position: absolute;
-  left: -99999999px;*/
+  /* position: absolute;
+  left: -99999999px; */
 }
 
 button {
-  height: 2rem;
+  background-color: lightgray;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.file-upload {
+  text-align: center;
+  background-color: gray;
+  margin: auto;
+  padding: 5px;
+  width: 60%;
+  border: 3px solid rgb(70, 69, 69);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+#uploadWrap {
+  margin-top: 10px;
+}
+
+input[type="file"] {
+  margin-left: 10px;
+  font-size: 20px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }

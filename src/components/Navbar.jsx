@@ -17,16 +17,17 @@ export default function Navbar({
 
   return (
     <>
-      <div
-        className="navbar"
-        id="text"
-        onClick={function() {
-          setView("AllPhotos");
-          console.log(currentView);
-        }}
-      >
-        {" "}
-        Click to view all Photos!{" "}
+      <div className="navbar" id="text">
+        <h1>YOSHI & NINA'S PICTURE BOX</h1>
+        <button
+          id="allPhotoButton"
+          onClick={function() {
+            setView("AllPhotos");
+          }}
+        >
+          {" "}
+          Click to view all Photos!{" "}
+        </button>
       </div>
       <Upload
         callback={file => {
