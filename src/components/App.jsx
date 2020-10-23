@@ -8,7 +8,7 @@ import { listObjects, getSingleObject, saveObject } from "../utils/index.js";
 export default function App() {
   const [currentView, setView] = useState("AllPhotos");
   const [photos, setPhotoArray] = useState([""]);
-  const [selectedPhoto, setPhoto] = useState(["Photo1"]);
+  const [selectedPhoto, setPhoto] = useState("");
   const [fileLoaded, setFileState] = useState(false);
 
   // define how states change with useEffect?
@@ -19,7 +19,7 @@ export default function App() {
 
       // get every single object and store!
       let store = [];
-      for (let i = 0; i < 10; i++) {
+      for (let i = 2; i < 12; i++) {
         let string = await getSingleObject(tempArray[i].Key);
         console.log(string);
         store.push(string);
@@ -38,7 +38,6 @@ export default function App() {
   // console.log('PHotos has been updated");
   // for photos
 
-  /* console.log(photos); */
   // define function to get photoinput data
   async function getPicture(file) {
     // save file with saveobject function
@@ -54,6 +53,12 @@ export default function App() {
     // array64 = photoSender();
   }
 
+  useEffect(() => {
+    if (selectedPhoto !== "") {
+      setView("SinglePhoto");
+    }
+  }, [selectedPhoto]);
+
   return (
     <>
       <Navbar
@@ -65,8 +70,11 @@ export default function App() {
         setFileState={setFileState}
         getPicture={getPicture}
       />
-      {/* {currentView === "AllPhotos" ? <AllPhotos photos={photos}/> : <SinglePhoto />} */}
-      <AllPhotos photos={photos} />
+      {currentView === "AllPhotos" ? (
+        <AllPhotos photos={photos} setPhoto={setPhoto} />
+      ) : (
+        <SinglePhoto photos={photos} selectedPhoto={selectedPhoto} />
+      )}
     </>
   );
 }

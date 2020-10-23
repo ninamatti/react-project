@@ -21,5 +21,30 @@ body {
 
 .image {
   height: auto;
-  width: 20%;
+  width: 100%;
+}
+
+.single {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border: 5px solid #555;
+}
+
+.imageWrap {
+  justify-content: flex-start;
+  /* display: flex;
+  align-items: center; */
+  background-color: blue;
+  margin: 5px;
+  width: 200px;
+  height: 350px;
+}
+
+.photoBody {
+  display: flex;
+  /* align-items: stretch; */
+  /* flex-flow: row wrap;
+  justify-content: flex-start; */
 }

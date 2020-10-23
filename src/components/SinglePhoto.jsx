@@ -1,5 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-export default function SinglePhoto() {
-  return <div>This is Single Photo!!!!</div>;
+export default function SinglePhoto({ photos, selectedPhoto }) {
+  return (
+    <>
+      <div>
+        <img
+          className="single"
+          src={"data:image/png;base64," + photos[selectedPhoto]}
+        />
+      </div>
+    </>
+  );
 }
